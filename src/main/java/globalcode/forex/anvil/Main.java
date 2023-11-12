@@ -30,9 +30,4 @@ public class Main extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new InventoryClickListener(), this);
         Bukkit.getPluginManager().registerEvents(new InventoryCloseListener(), this);
     }
-
-    @Override
-    public void onDisable(){
-        //onDisable
-    }
 }
