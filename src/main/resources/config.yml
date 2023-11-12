@@ -1,0 +1,11 @@
+gui:
+  size: 6
+  title: "&8>> &7Kowadlo"
+repair-item:
+  slot: 8 #(0-8) item będzie się ustawiać na samym dole ekwipunku w podanym slocie
+  name: "&7Kowadlo"
+  item: ANVIL
+  lore:
+    - ""
+    - "&8>> &aKliknij, aby naprawić itemy"
+    - ""
