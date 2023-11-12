@@ -12,10 +12,10 @@ public class InteractListener implements Listener {
 
     @EventHandler(priority = EventPriority.HIGHEST)
     public void open(InventoryOpenEvent e){
-        if(e.getInventory().getType().equals(InventoryType.ANVIL)){
-            e.setCancelled(true);
-            Player p = (Player)e.getPlayer();
-            p.openInventory(AnvilInventory.prepareInventory());
-        }
+        if(!e.getInventory().getType().equals(InventoryType.ANVIL)) return;
+
+        e.setCancelled(true);
+        Player p = (Player)e.getPlayer();
+        p.openInventory(AnvilInventory.prepareInventory());
     }
 }

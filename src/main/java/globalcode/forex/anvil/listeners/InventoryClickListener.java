@@ -13,11 +13,10 @@ public class InventoryClickListener implements Listener {
 
     @EventHandler
     public void click(InventoryClickEvent e){
-        if(e.getView().getTitle().equals(TextUtil.fixColor(Main.getPlugin().getConfig().getString("gui.title")))){
-            if(e.getSlot()==AnvilInventory.slot){
-                e.setCancelled(true);
-                ItemRepair.repairItems(e.getInventory());
-            }
-        }
+        if(!e.getView().getTitle().equals(TextUtil.fixColor(Main.getPlugin().getConfig().getString("gui.title")))) return;
+        if(e.getSlot()!=AnvilInventory.slot) return;
+
+        e.setCancelled(true);
+        ItemRepair.repairItems(e.getInventory());
     }
 }

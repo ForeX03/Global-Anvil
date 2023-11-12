@@ -14,9 +14,8 @@ public class RepairItem {
         FileConfiguration conf = Main.getPlugin().getConfig();
 
         Material mat = Material.getMaterial(conf.getString("repair-item.item"));
-        ItemStack is = new ItemBuilder(mat, 1)
+        return new ItemBuilder(mat, 1)
                 .setTitle(TextUtil.fixColor(conf.getString("repair-item.name")))
                 .addLores(TextUtil.fixColor(conf.getStringList("repair-item.lore"))).build();
-        return is;
     }
 }

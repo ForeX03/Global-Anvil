@@ -15,15 +15,14 @@ public class InventoryCloseListener implements Listener {
         if(e.getView().getTitle().equalsIgnoreCase(TextUtil.fixColor(Main.getPlugin().getConfig().getString("gui.title")))){
             Player p = (Player) e.getPlayer();
             for(ItemStack s : e.getInventory().getContents()){
-                if(s!=null) {
-                    if (!s.isSimilar(RepairItem.prepareItem())) {
-                        if(p.getInventory().firstEmpty()==-1){
-                            p.getWorld().dropItemNaturally(p.getLocation(), s);
-                        } else {
-                            p.getInventory().addItem(s);
-                        }
-                    }
+                if(s==null) continue;
+                if (s.isSimilar(RepairItem.prepareItem())) continue;
+
+                if(p.getInventory().firstEmpty()==-1){
+                    p.getWorld().dropItemNaturally(p.getLocation(), s);
+                    continue;
                 }
+                p.getInventory().addItem(s);
             }
         }
     }

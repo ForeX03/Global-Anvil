@@ -14,6 +14,7 @@ public class KowadloCommand implements CommandExecutor {
             cs.sendMessage(TextUtil.fixColor("&cKomenda tylko dla graczy"));
             return false;
         }
+
         Player p = (Player) cs;
         p.openInventory(AnvilInventory.prepareInventory());
         return false;
