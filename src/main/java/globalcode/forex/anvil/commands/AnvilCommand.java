@@ -7,7 +7,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class KowadloCommand implements CommandExecutor {
+public class AnvilCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender cs, Command cmd, String lab, String[] args) {
         if(!(cs instanceof Player)){

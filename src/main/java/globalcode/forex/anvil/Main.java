@@ -1,6 +1,6 @@
 package globalcode.forex.anvil;
 
-import globalcode.forex.anvil.commands.KowadloCommand;
+import globalcode.forex.anvil.commands.AnvilCommand;
 import globalcode.forex.anvil.listeners.InteractListener;
 import globalcode.forex.anvil.listeners.InventoryClickListener;
 import globalcode.forex.anvil.listeners.InventoryCloseListener;
@@ -25,7 +25,7 @@ public class Main extends JavaPlugin {
     public void onEnable(){
         plugin = this;
         saveDefaultConfig();
-        getCommand("kowadlo").setExecutor(new KowadloCommand());
+        getCommand("kowadlo").setExecutor(new AnvilCommand());
         Bukkit.getPluginManager().registerEvents(new InteractListener(), this);
         Bukkit.getPluginManager().registerEvents(new InventoryClickListener(), this);
         Bukkit.getPluginManager().registerEvents(new InventoryCloseListener(), this);

@@ -17,7 +17,6 @@ public class InventoryCloseListener implements Listener {
             for(ItemStack s : e.getInventory().getContents()){
                 if(s==null) continue;
                 if (s.isSimilar(RepairItem.prepareItem())) continue;
-
                 if(p.getInventory().firstEmpty()==-1){
                     p.getWorld().dropItemNaturally(p.getLocation(), s);
                     continue;

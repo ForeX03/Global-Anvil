@@ -14,15 +14,12 @@ public class ItemRepair {
     public static void repairItems(Inventory inv){
         List<ItemStack> it = new ArrayList<>();
         for (ItemStack itemstack : inv.getContents()) {
-            if(itemstack!=null) {
-                if (!itemstack.isSimilar(RepairItem.prepareItem())) {
-                    if (itemstack.getItemMeta() instanceof Damageable) {
-                        Damageable da = (Damageable) itemstack.getItemMeta();
-                        da.setDamage(0);
-                        itemstack.setItemMeta((ItemMeta) da);
-                    }
-                }
-            }
+            if(itemstack==null) return;
+            if (itemstack.isSimilar(RepairItem.prepareItem())) return;
+            if ((itemstack.getItemMeta() instanceof Damageable)) return;
+            Damageable da = (Damageable) itemstack.getItemMeta();
+            da.setDamage(0);
+            itemstack.setItemMeta((ItemMeta) da);
         }
 
     }
